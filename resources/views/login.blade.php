@@ -34,6 +34,11 @@
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-secondary w-100">LOGIN</button>
                             </div>
+                            @if(session('loginError'))
+                                <div class="text-danger bg-danger p-3 text-center text-white rounded">
+                                    {{session('loginError')}}
+                                </div>
+                            @endif
                         </form>
                     </div>
                 </div>
