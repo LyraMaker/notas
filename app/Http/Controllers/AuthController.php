@@ -15,4 +15,26 @@ class AuthController extends Controller
     {
         return view('logout');
     }
+
+    public function submitForm(Request $request){
+        $this->validateInputs($request);
+        
+        echo "ok";
+    }
+
+    public function validateInputs(Request $request)
+    {
+        $request->validate(
+            [
+                'text_username' => 'required|email',
+                'text_password' => 'required'
+            ],
+            [
+                'text_username.required' => "O nome do usuário é obrigatório!",
+                'text_username.email' => "Precisa ser um email válido!",
+                'text_password.required' => "Você precisa digitar uma senha!",
+                
+            ]
+        );
+    }
 }
