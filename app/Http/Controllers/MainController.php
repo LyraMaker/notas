@@ -9,4 +9,9 @@ class MainController extends Controller
     public function index(){
         echo "Estilo Ronaldinho!";
     }
+
+    public function newNote()
+    {
+        echo 'Criando nota';
+    }
 }
